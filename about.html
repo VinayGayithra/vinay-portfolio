@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!--  Favicon (For All Browsers) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon1.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon1.png">
+    <link rel="shortcut icon" href="favicon1.png" type="image/png">
+    <meta charset="UTF-8">
+    <title>About | Vinay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Same Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+    font-family: 'Targa';
+    src: url('Targa.ttf') format('truetype');
+}
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('backg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            overflow: hidden; /* ✅ NO SCROLL */
+            color: black;
+        }
+
+        /* Logo */
+        .logo {
+            position: fixed;
+            top: 30px;
+            left: 40px;
+            font-size: 18px;
+            font-family: 'Targa', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 999;
+        }
+
+        .logo span {
+            color: red;
+        }
+        .nav {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            display: flex;
+            gap: 25px;
+            z-index: 999;
+        }
+
+        .nav a {
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: black;
+            padding: 8px 18px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Main About Layout */
+        .about-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .about-text {
+            width: 40%;
+        }
+
+        .about-text h1 {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgb(60, 60, 60);
+        }
+
+        .about-image img {
+    width: 280px;
+    border-radius: 10px;
+    filter: drop-shadow(15px 20px 15px rgba(0,0,0,0.4));
+    transition: transform 0.2s ease-out;
+}
+
+        /* Responsive */
+        @media(max-width: 768px){
+            .about-container{
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .about-text{
+                width: 90%;
+            }
+
+            .about-text h1{
+                font-size: 35px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="logo">
+        Vinay<span>.</span>
+    </div>
+    <!--  Navigation -->
+    <div class="nav">
+        <a href="#">Design</a>
+        <a href="photo.html">Photos</a>
+        <a href="port.html">Back</a>
+
+    </div>
+
+
+
+    <div class="about-container">
+
+        <div class="about-text">
+            <h1>ABOUT ME</h1>
+            <p>
+                Hi, I'm Vinay — a passionate Editor and Photographer based in Karnataka, India.
+                I specialize in cinematic video editing, creative storytelling and professional photography.
+                <br><br>
+                My mission is to transform creative ideas into powerful visual experiences.
+                I love working on brand shoots, reels editing and storytelling projects.
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img src="MY PIC.jpg" alt="Vinay Photo">
+        </div>
+
+    </div>
+<script>
+    const image = document.querySelector(".about-image img");
+    const container = document.querySelector(".about-container");
+
+    container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const moveX = (x - rect.width / 2) / 40;   // smaller = more subtle
+        const moveY = (y - rect.height / 2) / 40;
+
+        image.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+
+    container.addEventListener("mouseleave", () => {
+        image.style.transform = "translate(0px, 0px)";
+    });
+</script>
+</body>
+</html>
