@@ -1,55 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <!--  Favicon (For All Browsers) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon1.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon1.png">
-    <link rel="shortcut icon" href="assets/images/icons/favicon1.png" type="image/png">
+
+    <!-- =========================================
+         BASIC META
+    ========================================== -->
+
     <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>About | Vinay</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Same Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    
-    <link rel="stylesheet" href="assets/css/about.css">
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="assets/images/icons/favicon1.png"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="assets/images/icons/favicon1.png"
+    >
+
+    <link
+        rel="shortcut icon"
+        href="assets/images/icons/favicon1.png"
+        type="image/png"
+    >
+
+
+    <!-- =========================================
+         GOOGLE FONT
+    ========================================== -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         ABOUT CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="assets/css/about.css"
+    >
+
 </head>
+
 
 <body>
 
-    <div class="logo">
-        Vinay<span>.</span>
-    </div>
-    <!--  Navigation -->
-    <div class="nav">
-        <a href="#">Design</a>
-        <a href="photo.html">Photos</a>
-        <a href="index.html">Back</a>
 
-    </div>
+    <!-- =========================================
+         FLOATING HEADER
+    ========================================== -->
+
+    <header class="floating-header">
 
 
+        <!-- LOGO -->
 
-    <div class="about-container">
+        <div class="header-logo">
 
-        <div class="about-text">
-            <h1>ABOUT ME</h1>
+            Vinay<span>.</span>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="header-nav">
+
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="index.html#projects">
+                Projects
+            </a>
+
+
+            <a href="about.html" class="active">
+                About
+            </a>
+
+
+            <a
+                href="resume/Resume.pdf"
+                class="resume-btn"
+                download
+            >
+                Resume
+            </a>
+
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         ABOUT HERO
+    ========================================== -->
+
+    <main class="about-page">
+
+
+        <section class="about-hero">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="about-content">
+
+
+                <span class="section-label">
+                    ABOUT ME
+                </span>
+
+
+                <h1>
+                    Building ideas into
+                    <span>real solutions.</span>
+                </h1>
+
+
+                <p class="about-intro">
+
+                    Hi, I'm Vinay — a Computer Science & Data Science
+                    Engineering student from Karnataka, India,
+                    passionate about software development,
+                    full-stack development and AI-powered solutions.
+
+                </p>
+
+
+                <p>
+
+                    I enjoy solving problems through code and building
+                    practical applications that combine software,
+                    data and artificial intelligence.
+
+                </p>
+
+
+                <div class="about-buttons">
+
+
+                    <a
+                        href="index.html#projects"
+                        class="primary-btn"
+                    >
+                        VIEW MY PROJECTS →
+                    </a>
+
+
+                    <a
+                        href="resume/Resume.pdf"
+                        download
+                        class="secondary-btn"
+                    >
+                        DOWNLOAD RESUME
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="about-visual">
+
+
+                <div class="visual-card">
+
+
+                    <span class="visual-number">
+                        01
+                    </span>
+
+
+                    <h2>
+                        Curious.
+                    </h2>
+
+
+                    <h2>
+                        Creative.
+                    </h2>
+
+
+                    <h2>
+                        Always Learning.
+                    </h2>
+
+
+                    <div class="orange-line"></div>
+
+
+                    <p>
+                        Turning concepts into projects
+                        and continuously improving my
+                        technical skills.
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             EDUCATION
+        ========================================== -->
+
+        <section class="info-section">
+
+
+            <div class="info-heading">
+
+                <span>
+                    EDUCATION
+                </span>
+
+                <h2>
+                    Academic Journey
+                </h2>
+
+            </div>
+
+
+            <div class="education-card">
+
+
+                <div class="education-year">
+                    2023 — Present
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        B.E. — Computer Science & Data Science
+                    </h3>
+
+
+                    <p>
+                        RNS Institute of Technology
+                    </p>
+
+
+                    <span>
+                        Karnataka, India
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             TECHNICAL SKILLS
+        ========================================== -->
+
+        <section class="info-section">
+
+
+            <div class="info-heading">
+
+                <span>
+                    SKILLS
+                </span>
+
+                <h2>
+                    Technical Toolkit
+                </h2>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Programming
+                    </h3>
+
+                    <p>
+                        C++ · Python · JavaScript
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        HTML · CSS · JavaScript · React
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        AI & Data
+                    </h3>
+
+                    <p>
+                        Machine Learning · Computer Vision ·
+                        YOLO · OpenCV
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Tools
+                    </h3>
+
+                    <p>
+                        Git · GitHub · VS Code · Google Colab
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             CURRENT FOCUS
+        ========================================== -->
+
+        <section class="focus-section">
+
+
+            <span>
+                CURRENTLY FOCUSING ON
+            </span>
+
+
+            <h2>
+                Learning. Building. Improving.
+            </h2>
+
+
             <p>
-                Hi, I'm Vinay — a passionate Editor and Photographer based in Karnataka, India.
-                I specialize in cinematic video editing, creative storytelling and professional photography.
-                <br><br>
-                My mission is to transform creative ideas into powerful visual experiences.
-                I love working on brand shoots, reels editing and storytelling projects.
+
+                Currently strengthening my skills in
+                full-stack development, C++, Python,
+                JavaScript and AI/ML while building
+                real-world projects.
+
             </p>
-        </div>
 
-        <div class="about-image">
-            <img src="assets/images/profile/my-pic.jpg" alt="Vinay Photo">
-        </div>
 
-    </div>
+        </section>
+
+
+
+        <!-- =========================================
+             CAREER SECTION
+        ========================================== -->
+
+        <section class="career-section">
+
+
+            <div>
+
+                <span>
+                    CAREER INTEREST
+                </span>
+
+
+                <h2>
+                    Open to opportunities
+                </h2>
+
+
+                <p>
+
+                    I'm interested in opportunities where I can
+                    contribute to real-world software products,
+                    learn from experienced teams and grow as
+                    a developer.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="mailto:mrvinayvini@gmail.com"
+                class="contact-btn"
+            >
+                LET'S CONNECT →
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script src="assets/js/about.js"></script>
+
+
 </body>
+
 </html>

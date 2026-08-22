@@ -1,198 +1,1253 @@
+/* =========================================
+   CUSTOM FONT
+========================================= */
+
 @font-face {
     font-family: 'Targa';
     src: url('../fonts/Targa.ttf') format('truetype');
 }
 
-        /*  About Section */
-.about-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 120px 80px;
-    margin-top: 200px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-}
 
-.about-left {
-    width: 50%;
-    text-align: left;
-}
+/* =========================================
+   GLOBAL
+========================================= */
 
-.about-left h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.about-left p {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #333;
-}
-
-.about-right {
-    width: 40%;
-    text-align: right;
-}
-
-.about-right img {
-    width: 300px;
-    border-radius: 20px;
-    box-shadow: 0px 20px 40px rgba(0,0,0,0.2);
-}
-/* Contact Section */
-.contact-section {
-    margin-top: 50px;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-}
-
-.contact-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-.contact-item {
-    font-size: 10px;
-    font-weight: 600;
-}
-
-.contact-item a {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: 0.3s;
-}
-
-.contact-item a:hover {
-    color: red;
-}
-
-.contact-item img {
-    width: 20px;
-    height: 20px;
-}
-
-
-/* Smooth Scroll */
 html {
     scroll-behavior: smooth;
 }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-image: url('../images/background/backg.jpg');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            cursor: pointer;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        /* Top Left Logo */
-        .logo {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            font-family: 'Targa', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            z-index: 999;
-            color: black;
-        }
 
-        .logo span {
-            color: red;
-        }
+/* =========================================
+   BODY
+========================================= */
 
-        /* Top Right Navigation */
-        .nav {
-            position: fixed;
-            top: 30px;
-            right: 40px;
-            display: flex;
-            gap: 25px;
-            z-index: 999;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
 
-        .nav a {
-            text-decoration: none;
-            font-size: 10px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: black;
-            padding: 8px 18px;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
+    margin: 0;
 
-        .nav a:hover {
-            background-color: black;
-            color: white;
-        }
+    padding: 20px;
 
-        .hero-text {
-            font-size: 12px;
-            font-weight: 600;
-            color: rgb(61, 61, 61);
-            transform: translateY(50px);
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
+    background-image:
+        url('../images/background/backg.jpg');
 
-        .container {
-            position: relative;
-            display: inline-block;
-            margin-top: 10px;
-        }
+    background-size: cover;
 
-        /* Background Text */
-        .background-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -60%);
-            font-size: 60px;
-            font-weight: 800;
-            white-space: nowrap;
-            z-index: 1;
-        }
+    background-position: center;
 
-        .web {
-            color: rgba(0, 0, 0, 0.8);
-        }
+    background-attachment: fixed;
 
-        .photo {
-            color: transparent;
-            -webkit-text-stroke: 0.8px black;
-        }
+    text-align: center;
 
-        /* Profile Image */
-        .profile-img {
-            width: 250px;
-            position: relative;
-            z-index: 2;
-            transform: translateY(60px);
-            transition: transform 0.2s ease;
-            mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
-            filter: drop-shadow(15px 20px 10px rgba(0, 0, 0, 0.5));
-        }
+    cursor: pointer;
+}
 
-        .location-text {
-            position: absolute;
-            top: 72%;
-            left: -150px;
-            font-size: 12px;
-            font-weight: 600;
-            color: rgb(65, 65, 65);
-            white-space: nowrap;
-        }
+
+/* =========================================
+   FLOATING WATER / GLASS HEADER
+========================================= */
+
+.floating-header {
+
+    position: fixed;
+
+    top: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    /* Increased header length */
+
+    width: 92%;
+
+    max-width: 1250px;
+
+    /* Increased header height */
+
+    height: 68px;
+
+    padding: 0 18px 0 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+
+    /* Glass / Water Effect */
+
+    background:
+        rgba(255, 255, 255, 0.42);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+
+    /* Glass Border */
+
+    border:
+        1px solid rgba(255, 255, 255, 0.85);
+
+    border-radius:
+        50px;
+
+
+    /* Floating Shadow */
+
+    box-shadow:
+
+        0 12px 40px
+        rgba(0, 0, 0, 0.10),
+
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.95);
+
+
+    z-index: 9999;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================
+   ORANGE WATER HIGHLIGHT
+========================================= */
+
+.floating-header::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+
+    left: 18%;
+
+    width: 64%;
+
+    height: 2px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff6b00,
+            #ff9a3d,
+            #ff6b00,
+            transparent
+        );
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   HEADER LOGO
+========================================= */
+
+.header-logo {
+
+    font-family: 'Targa', sans-serif;
+
+    /* Increased logo */
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: black;
+
+    white-space: nowrap;
+}
+
+.header-logo span {
+
+    color:
+        #ff6b00;
+}
+
+
+/* =========================================
+   HEADER NAVIGATION
+========================================= */
+
+.header-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    /* More space between links */
+
+    gap: 10px;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.header-nav a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: #111;
+
+    /* Increased font size */
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    /* Increased button size */
+
+    padding: 11px 20px;
+
+    border-radius: 30px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================
+   NAVIGATION HOVER
+========================================= */
+
+.header-nav a:hover {
+
+    background:
+        rgba(255, 107, 0, 0.12);
+
+    color:
+        #ff6b00;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================
+   RESUME BUTTON
+========================================= */
+
+.header-nav .resume-btn {
+
+    background:
+        #ff6b00;
+
+    color:
+        white;
+
+    padding:
+        11px 22px;
+
+    box-shadow:
+        0 6px 18px
+        rgba(255, 107, 0, 0.25);
+}
+
+
+.header-nav .resume-btn:hover {
+
+    background:
+        #e85d00;
+
+    color:
+        white;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================
+   HEADER FLOATING HOVER
+========================================= */
+
+.floating-header:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-3px);
+
+    box-shadow:
+
+        0 18px 45px
+        rgba(0, 0, 0, 0.13),
+
+        inset 0 1px 1px
+        rgba(255, 255, 255, 0.95);
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.hero-text {
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+    color:
+        rgb(61, 61, 61);
+
+    transform:
+        translateY(50px);
+
+    margin-top:
+        40px;
+
+    margin-bottom:
+        20px;
+}
+
+
+/* =========================================
+   HERO CONTAINER
+========================================= */
+
+.container {
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+    margin-top:
+        10px;
+}
+
+
+/* =========================================
+   BACKGROUND HERO TEXT
+========================================= */
+
+.background-text {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    transform:
+        translate(-50%, -60%);
+
+    font-size:
+        60px;
+
+    font-weight:
+        800;
+
+    white-space:
+        nowrap;
+
+    z-index:
+        1;
+}
+
+
+.web {
+
+    color:
+        rgba(0, 0, 0, 0.8);
+}
+
+
+.photo {
+
+    color:
+        transparent;
+
+    -webkit-text-stroke:
+        0.8px black;
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile-img {
+
+    width:
+        250px;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    transform:
+        translateY(60px);
+
+    transition:
+        transform 0.2s ease;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black 65%,
+            transparent 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            black 65%,
+            transparent 100%
+        );
+
+    filter:
+        drop-shadow(
+            15px 20px 10px
+            rgba(0, 0, 0, 0.5)
+        );
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.location-text {
+
+    position:
+        absolute;
+
+    top:
+        72%;
+
+    left:
+        -150px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+    color:
+        rgb(65, 65, 65);
+
+    white-space:
+        nowrap;
+}
+
+
+/* =========================================
+   INTRODUCTION SECTION
+========================================= */
+
+.intro-section {
+
+    width:
+        80%;
+
+    max-width:
+        900px;
+
+    margin:
+        40px auto 100px;
+
+    padding:
+        60px 40px;
+
+    background:
+        rgba(255, 255, 255, 0.85);
+
+    border-radius:
+        20px;
+
+    text-align:
+        center;
+}
+
+
+.intro-section p {
+
+    max-width:
+        700px;
+
+    margin:
+        0 auto;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.8;
+
+    color:
+        #333;
+}
+
+
+/* =========================================
+   INTRO BUTTONS
+========================================= */
+
+.intro-buttons {
+
+    margin-top:
+        30px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    flex-wrap:
+        wrap;
+}
+
+
+.intro-buttons a {
+
+    display:
+        inline-block;
+
+    padding:
+        12px 25px;
+
+    border:
+        1px solid black;
+
+    border-radius:
+        30px;
+
+    color:
+        black;
+
+    text-decoration:
+        none;
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        1px;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.intro-buttons a:hover {
+
+    background:
+        black;
+
+    color:
+        white;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+
+.projects-section {
+
+    width:
+        85%;
+
+    max-width:
+        1100px;
+
+    margin:
+        100px auto;
+
+    padding:
+        80px 40px;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    border-radius:
+        20px;
+}
+
+
+/* =========================================
+   PROJECT SECTION HEADING
+========================================= */
+
+.section-heading {
+
+    text-align:
+        left;
+
+    margin-bottom:
+        50px;
+}
+
+
+.section-heading span {
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        3px;
+
+    color:
+        #555;
+}
+
+
+.section-heading h2 {
+
+    margin-top:
+        10px;
+
+    font-size:
+        38px;
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects-container {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        25px;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card {
+
+    padding:
+        35px;
+
+    text-align:
+        left;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.15);
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    transition:
+        all 0.35s ease;
+}
+
+
+/* =========================================
+   PROJECT CARD HOVER
+========================================= */
+
+.project-card:hover {
+
+    background:
+        #ff6b00;
+
+    border-color:
+        #ff6b00;
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(255, 107, 0, 0.30);
+}
+
+
+/* =========================================
+   PROJECT TEXT
+   ALWAYS BLACK
+========================================= */
+
+.project-card small,
+.project-card h3,
+.project-card h4,
+.project-card p {
+
+    color:
+        black;
+}
+
+
+/* =========================================
+   PROJECT NUMBER
+========================================= */
+
+.project-card small {
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+}
+
+
+/* =========================================
+   PROJECT TITLE
+========================================= */
+
+.project-card h3 {
+
+    margin:
+        15px 0 5px;
+
+    font-size:
+        26px;
+
+    font-weight:
+        700;
+}
+
+
+.project-card h4 {
+
+    margin:
+        0 0 20px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+}
+
+
+/* =========================================
+   PROJECT DESCRIPTION
+========================================= */
+
+.project-card p {
+
+    font-size:
+        12px;
+
+    line-height:
+        1.8;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+
+.tech-stack {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+    margin:
+        25px 0;
+}
+
+
+.tech-stack span {
+
+    padding:
+        6px 10px;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.25);
+
+    border-radius:
+        20px;
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    color:
+        black;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+/* =========================================
+   TAG HOVER
+========================================= */
+
+.project-card:hover .tech-stack span {
+
+    color:
+        black;
+
+    border-color:
+        black;
+}
+
+
+/* =========================================
+   GITHUB LINK
+========================================= */
+
+.project-card a {
+
+    display:
+        inline-block;
+
+    margin-top:
+        5px;
+
+    color:
+        black;
+
+    text-decoration:
+        none;
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+/* =========================================
+   GITHUB HOVER
+========================================= */
+
+.project-card a:hover {
+
+    color:
+        white;
+
+    background:
+        black;
+
+    padding:
+        8px 12px;
+
+    border-radius:
+        20px;
+}
+
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+
+    margin-top:
+        50px;
+
+    padding:
+        40px;
+
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    border-radius:
+        10px;
+}
+
+
+.contact-row {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        50px;
+
+    flex-wrap:
+        wrap;
+}
+
+
+.contact-item {
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+}
+
+
+.contact-item a {
+
+    text-decoration:
+        none;
+
+    color:
+        black;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    transition:
+        0.3s;
+}
+
+
+.contact-item a:hover {
+
+    color:
+        #ff6b00;
+}
+
+
+.contact-item img {
+
+    width:
+        20px;
+
+    height:
+        20px;
+}
+
+
+/* =========================================
+   CONTACT HEADING
+========================================= */
+
+.contact-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        35px;
+}
+
+
+.contact-heading span {
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        3px;
+
+    color:
+        #555;
+}
+
+
+.contact-heading h2 {
+
+    margin:
+        10px 0;
+
+    font-size:
+        30px;
+}
+
+
+.contact-heading p {
+
+    font-size:
+        12px;
+
+    color:
+        #444;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        padding:
+            15px;
+    }
+
+
+    /* HEADER */
+
+    .floating-header {
+
+        top:
+            15px;
+
+        width:
+            94%;
+
+        height:
+            58px;
+
+        padding:
+            0 10px 0 20px;
+    }
+
+
+    .header-logo {
+
+        font-size:
+            17px;
+    }
+
+
+    .header-nav {
+
+        gap:
+            2px;
+    }
+
+
+    .header-nav a {
+
+        font-size:
+            9px;
+
+        padding:
+            8px 10px;
+    }
+
+
+    .header-nav .resume-btn {
+
+        padding:
+            8px 12px;
+    }
+
+
+    /* HERO */
+
+    .hero-text {
+
+        margin-top:
+            45px;
+    }
+
+
+    .background-text {
+
+        font-size:
+            35px;
+
+        white-space:
+            normal;
+
+        width:
+            100vw;
+    }
+
+
+    .profile-img {
+
+        width:
+            190px;
+    }
+
+
+    .location-text {
+
+        left:
+            -80px;
+
+        font-size:
+            9px;
+    }
+
+
+    /* INTRO */
+
+    .intro-section {
+
+        width:
+            85%;
+
+        margin-top:
+            50px;
+
+        padding:
+            40px 20px;
+    }
+
+
+    .intro-section p {
+
+        font-size:
+            13px;
+    }
+
+
+    /* PROJECTS */
+
+    .projects-section {
+
+        width:
+            90%;
+
+        padding:
+            50px 20px;
+    }
+
+
+    .section-heading h2 {
+
+        font-size:
+            28px;
+    }
+
+
+    .projects-container {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .project-card {
+
+        padding:
+            25px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+
+        padding:
+            30px 15px;
+    }
+
+
+    .contact-row {
+
+        gap:
+            20px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 500px) {
+
+    .floating-header {
+
+        width:
+            95%;
+    }
+
+
+    .header-nav a {
+
+        font-size:
+            8px;
+
+        padding:
+            7px 8px;
+    }
+
+
+    .header-nav .resume-btn {
+
+        padding:
+            7px 10px;
+    }
+
+
+    .header-logo {
+
+        font-size:
+            16px;
+    }
+
+}
